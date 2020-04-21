@@ -1,9 +1,13 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
+// Below in the component decorator, we add change detection to the mix.
+// This makes it so that this component doesn't update the data unless
+// an event is fired. Check notion.so notes for more.
 @Component({
   selector: 'app-customer-detail',
   templateUrl: './customer-detail.component.html',
-  styleUrls: ['./customer-detail.component.scss']
+  styleUrls: ['./customer-detail.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CustomerDetailComponent implements OnInit {
 
